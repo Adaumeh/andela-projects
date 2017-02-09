@@ -1,36 +1,39 @@
-// testing code goes here
+  var myApp = require('../app/library.js');
 
-'use strict'
+describe("Fizz Buzz tests", function() {
 
-var chai = require('chai');
-var assert = chai.assert;
+  it("should return `Fizz` for number divisible by 3", function() {
+    expect(myApp.fizzBuzz(3)).toBe('Fizz');
+  });
 
-var myApp = require('../app/library.js');
+  it("should return `Buzz` for number divisible by 5", function() {
+    expect(myApp.fizzBuzz(5)).toBe('Buzz');
+  });
 
-describe("Test for proper arithmetic functionality", function() {
-  it("should return 2 as average for 1, 2, 3", function() {
-    assert(myApp.computeAverage(1,2,3) == 3);
-  })
-  it("should return 5 as average for 3, 7, 5", function() {
-    assert(myApp.computeAverage(3, 7, 5) == 5);
-  })
-  it("should return 120 as factorial for 5", function() {
-    assert(myApp.computeFactorial(5) == 120);
-  })
-})
+  it("should return `FizzBuzz` for 15", function() {
+    expect(myApp.fizzBuzz(15)).toBe('FizzBuzz');
+  });
+
+  it("should return `FizzBuzz` for 45", function() {
+    expect(myApp.fizzBuzz(45)).toBe('FizzBuzz');
+  });
+
+  it("should return `FizzBuzz` for 90", function() {
+    expect(myApp.fizzBuzz(90)).toBe('FizzBuzz');
+  });
+
+  it("should return `Fizz` for 63", function() {
+    expect(myApp.fizzBuzz(63)).toBe('Fizz');
+  });
+
+  it("should return 7 since its indivisible by 3 and 5", function() {
+    expect(myApp.fizzBuzz(7)).toBe(7);
+  });
+
+  it("should return 101 since its indivisible by 3 and 5", function() {
+    expect(myApp.fizzBuzz(101)).toBe(101);
+  });
+
+});
 
 
-describe("Test for temperature conversion functionality", function() {
-  it("should return X for Celcius value Y", function() {
-    assert(myApp.convertTempCtoF(40) == 104);
-  })
-  it("should return X for Celcius value Y", function() {
-    assert(myApp.convertTempCtoF(60) == 140);
-  })
-  it("should return Y for Fahrenheit value X", function() {
-    assert(myApp.convertTempFtoC(140) == 60);
-  })
-  it("should return Y for Fahrenheit value X", function() {
-    assert(myApp.convertTempFtoC(104) == 40);
-  })
-})
