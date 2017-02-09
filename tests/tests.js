@@ -35,6 +35,10 @@ describe("Fizz Buzz tests", function() {
    it("should return wrong input for array", function() {
     expect(myApp.fizzBuzz([6,7,8])).toBe(wrong input);
   });
+   it("should return empty parameter not alowed", function() {
+    expect(myApp.fizzBuzz()).toBe(enter a value);
+  });
+
 
 
 
