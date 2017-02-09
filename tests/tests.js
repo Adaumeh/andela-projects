@@ -32,6 +32,10 @@ describe("Fizz Buzz tests", function() {
    it("should return 0  for wrong input", function() {
     expect(myApp.fizzBuzz(c)).toBe(0);
   });
+   it("should return wrong input for array", function() {
+    expect(myApp.fizzBuzz([6,7,8])).toBe(wrong input);
+  });
+
 
 
   it("should return 101 since its indivisible by 3 and 5", function() {
