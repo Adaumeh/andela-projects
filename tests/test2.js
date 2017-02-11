@@ -8,7 +8,7 @@ var myApp = require('../app/library2.js');
     describe("Case for an empty array", function() {
 
       it("should return 0 for an empty array", function() {
-        expect(myApp.aritGeo([])).toEqual(0);
+        expect(aritGeo([])).toEqual(0);
       });
 
     });
@@ -16,7 +16,7 @@ var myApp = require('../app/library2.js');
     describe("Case for an arithmetic sequence", function() {
 
       it("should return `Arithmetic` for [2, 4, 6, 8, 10]", function() {
-        expect(myApp.aritGeo([2, 4, 6, 8, 10])).toEqual('Arithmetic');
+        expect(myApparitGeo([2, 4, 6, 8, 10])).toEqual('Arithmetic');
       });
 
       it("should return `Arithmetic` for [5, 11, 17, 23, 29, 35, 41]", function() {
