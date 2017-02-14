@@ -1,0 +1,22 @@
+dataTypes:function(value){
+  var n = null;
+  var bool = true;
+  
+  if(typeof(value === String)){
+    return value.length;
+  }else if(typeof(value === '' || value === undefined)){
+    return 'no value';
+    
+  }else if(!bool){
+    return 'true';
+  }
+  else if(typeof(value  === Number &&  value < 100)){
+    return 'less than 100';
+  }else if(typeof(value  === Number &&  value> 100)){
+    return 'more than 100';
+    
+  }else if(typeof(value  === Number &&  value == 100)){
+    return 'equal to 100';
+  }
+  
+}
