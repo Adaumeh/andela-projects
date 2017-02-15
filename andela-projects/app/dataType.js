@@ -23,9 +23,10 @@ else if(typeof(value  === String && value.length !== '')){
   }else if( typeof value === true){
     return true
   } else if( typeof( value  ===  'function')){
-      var callback = function(){
-     dataTypes(true)}
-    return dataTypes(true)}
+      var callback = dataTypes(true)
+    
+    return callback
+  }
   
  
 }
