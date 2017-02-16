@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="notes">
+<Html>
+<head>
+<title> Introduction To Angular JS </title>
+<link href="...\asset\css\postit.css" rel="stylesheet" type="text/css"></link>
+<link  href="http://fonts.googleapis.com/css?\family=Reenie+Beanie:regular" rel="stylesheet"type="text/css"></link>
+
+</head>
+<Body>
+<script type='text/javascript' src='..\asset\js\jquery-3.1.1.min.js'></script>
+<script type='text/javascript' src='..\asset\js\json2.js'></script>
+
+<h1> MY POST IT NOTE</h1>
+<script>
+var notes, count = 0;
+// save the notes into local storage
+function saveNotes() {
+    var notesArray = [];
+    // for each of the notes add a bespoke note object to the array
+    notes.find("saveNote").each(function (i, e) {
+        // save the class attribute of the div, as well as the text for the title and content text areas
+        var colourClass = $(e).attr("class");
+        var title = $(e).find("textarea.note-title");
+        var content = $(e).find("textarea.notes");
+        notesArray.push({ Index: i, Title: title.val(), Content: content.val(), Class: colourClass });
+    });
+    // json encode it
+    var jsonStr = JSON.stringify(notesArray);
+    // and save the json string into local storage
+    localStorage.setItem("notes", jsonStr);
+	}
+	function addNewNote(className, title, content) {
+	// if class is not specified, use a random colour class
+				
+	// add a new note to the end of the list
+	notes.append("<li><div class='" + className + "'>" + 
+					"<textarea class='note-title' placeholder='Your title ' maxlength='10'/>" + 
+					"<textarea class='note-content' placeholder='Post your note'/>" + 
+					"<img class='hide' src='.../asset/image/mage2.jpeg'/>" + 
+					"</div></li>");
+				
+	// get the new note that's just been added and attach the click event handler to its close button
+	var newNote = notes.find("li:last");
+	newNote.find("img").click(function () {
+        // remove the note and save
+	    newNote.remove();
+	    saveNotes();
+	});
+
+  </script>
+<div class = "mycontrols">
+
+<form id="form" action="#" method="POST">
+ "<input type ="text area" id="notes""/><br></br>
+<input type = "button" id="addNote" value="ADD NOTE"/>
+<input type ="button" id="saveNote" value ="SAVE"/>
+<input type = "button" id="delNote" value="DELETE"/>
+<input type ="button" id="updateNote" value ="UPDATE"/>
+<form action="demo_form.asp">
+<select name="VIEW LIST">
+  <option value="post2">My nitda work</option>
+  <option value="post3">a title once again</option>
+  <option value="post4">title strikes back</option>
+  <option value="post5">my today engagement</option>
+</select>
+<input type="submit" value="VIEW LIST">
+</form>
+</div>   
+</body>
+</html>
+ 
+</Body>
+</Html>
