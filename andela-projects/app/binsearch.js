@@ -1,0 +1,1 @@
+var myApp = require('../app/binarysearch.js')
